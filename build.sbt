@@ -35,10 +35,14 @@ lazy val root = (project in file("."))
   .settings(
     name := "aistudy",
     libraryDependencies ++= Seq(
-      //Test dependencies
+      //"org.scalanlp" %% "breeze" % "2.1.0",
+      //"ai.dragonfly" %% "slash" % "0.3.21",
+      //"org.tensorflow" % "tensorflow-core-platform" % "1.0.0",
+      "org.platanios" %% "tensorflow" % "0.4.1" classifier "darwin-cpu-x86_64",
+        //Test dependencies
       "org.scalameta" %% "munit" % "1.1.0" % "test"
     ),
-    scalacOptions ++= standardOptions ++ scala3Options
+    scalacOptions ++= standardOptions //++ scala3Options
   )
 
 testFrameworks += new TestFramework("munit.Framework")
